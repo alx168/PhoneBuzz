@@ -1,4 +1,4 @@
-from run import application
+from PhoneBuzz import application
 
 if __name__ == "__main__":
     application.run()
