@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from twilio.twiml.voice_response import VoiceResponse
+from twilio.twiml.voice_response import Gather, VoiceResponse
 
 application = Flask(__name__)
 
@@ -9,8 +9,11 @@ application = Flask(__name__)
 def hello():
     """responding to requests incoming"""
     resp = VoiceResponse()
-    resp.say("Hello, please enter a number to play fizzbuzz over the phone")
-    resp.say("Press # when you're done")
+    resp.say("Hello, please enter a number to play fizzbuzz over the phone.  ")
+    resp.say("Press # when you're done.")
+    gather = Gather(input='testing')
+    resp.say("you entered: ")
+    resp.say(gather)
     
     return str(resp)
 
