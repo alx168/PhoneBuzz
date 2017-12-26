@@ -9,7 +9,8 @@ application = Flask(__name__)
 def hello():
     """responding to requests incoming"""
     resp = VoiceResponse()
-    resp.say("Hello Mom!")
+    resp.say("Hello, please enter a number to play fizzbuzz over the phone")
+    resp.say("Press # when you're done")
     
     return str(resp)
 
