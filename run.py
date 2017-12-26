@@ -11,9 +11,10 @@ def hello():
     resp = VoiceResponse()
     resp.say("Hello, please enter a number to play fizzbuzz over the phone.  ")
     resp.say("Press # when you're done.")
-    gather = Gather(input='testing')
-    resp.say("you entered: ")
-    resp.say(gather)
+    gather = Gather()
+    gather.say("you entered: ")
+    gather.say(gather)
+    
     
     return str(resp)
 
