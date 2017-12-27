@@ -12,8 +12,8 @@ def hello():
     resp.say("Hello, please enter a number to play fizzbuzz over the phone.  ")
     resp.say("Press # when you're done.")
     gather = Gather()
-    gather.say("you entered: ")
-    gather.say(gather)
+    resp.say("you entered: ")
+    resp.append(gather)
     
     
     return str(resp)
