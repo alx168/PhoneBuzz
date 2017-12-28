@@ -5,16 +5,17 @@ from twilio.twiml.voice_response import Gather, VoiceResponse, Redirect
 
 application = Flask(__name__)
 
-@application.route('/hello', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 
 def hello():
     """responding to requests incoming"""
     resp = VoiceResponse()
-    gather = resonse.gather()
+    gather = Gather()
     gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")
-    digits = request.form['Digits']
-    gather.say(digits) 
-    
+    resp.append(gather)
+    #digits = request.form['Digits']
+    #gather.say(digits) 
+    #resp.append(digits)
     #if user enters nothing
     #resp.redirect('./hello')
     
