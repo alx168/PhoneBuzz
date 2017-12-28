@@ -1,20 +1,22 @@
 import os
-from flask import Flask
-from twilio.twiml.voice_response import Gather, VoiceResponse
+from flask import abort, Flask, request
+from functools import wraps
+from twilio.twiml.voice_response import Gather, VoiceResponse, Redirect
 
 application = Flask(__name__)
 
-@application.route("/", methods=['GET', 'POST'])
+@application.route('/hello', methods=['GET', 'POST'])
 
 def hello():
     """responding to requests incoming"""
     resp = VoiceResponse()
-    resp.say("Hello, please enter a number to play fizzbuzz over the phone.  ")
-    resp.say("Press # when you're done.")
-    gather = Gather()
-    resp.say("you entered: ")
-    resp.append(gather)
+    gather = resonse.gather()
+    gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")
+    digits = request.form['Digits']
+    gather.say(digits) 
     
+    #if user enters nothing
+    #resp.redirect('./hello')
     
     return str(resp)
 
