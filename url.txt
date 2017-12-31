@@ -1,0 +1,2 @@
+=== alexguo-phonebuzz Config Vars
+DATABASE_URL: postgres://vbzdthgdnapyiu:ee6b67b791c2f7629653f206fa9020046d0131908b54210b68ed1e8aa379542d@ec2-54-235-85-127.compute-1.amazonaws.com:5432/d1dfpdtq7vv8pe
