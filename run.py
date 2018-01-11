@@ -13,7 +13,9 @@ def hello():
     gather = Gather()
     gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")
     resp.append(gather)
-    #digits = request.form['Digits']
+    #digits = request.values['Digits']
+    if gather == 1:
+        gather.say("goodbye");
     #gather.say(digits) 
     #resp.append(digits)
     #if user enters nothing
