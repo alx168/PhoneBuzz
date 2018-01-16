@@ -10,7 +10,7 @@ app = Flask(__name__)
 def hello():
     """responding to requests incoming"""
     resp = VoiceResponse()
-    if (request.method =='GET' || request.method == 'POST'):
+    if (request.method =='GET' or request.method == 'POST'):
         gather = Gather()
         gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")    
         print(request.data.decode('ascii'))
