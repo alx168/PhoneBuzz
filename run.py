@@ -17,6 +17,13 @@ def hello():
         if 'Digits' in request.form:
             digits = request.form['Digits']
             gather.say(digits) 
+            for i in range(digits):
+                if i % 3 == 0 and i % 5 == 0:
+                    gather.say("FizzBuzz")
+                elif i % 3 == 0:
+                    gather.say("Fizz")
+                elif i % 5 == 0:
+                    gather.say("Buzz")
         else:
             gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")    
         
