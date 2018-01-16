@@ -14,23 +14,10 @@ def hello():
         gather = Gather()
         gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")    
         #print(request.data.decode('ascii'))
-        print("form")
-        print(request.form)
-        print("args")
-        print(request.args)
-        print("values")
-        print(request.values)
-        print("get_json")
-        print(request.get_json())
+        #print("form")
+        digits = request.form['Digits']
+        gather.say(digits) 
         resp.append(gather)
-    #resp.append(gather)
-    #digits = request.values['Digits']
-    #if gather == 1:
-    #    gather.say("goodbye");
-    #gather.say(digits) 
-    #resp.append(digits)
-    #if user enters nothing
-    #resp.redirect('./hello')
     
     return str(resp)
 
