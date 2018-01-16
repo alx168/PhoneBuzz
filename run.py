@@ -10,12 +10,11 @@ app = Flask(__name__)
 def hello():
     """responding to requests incoming"""
     resp = VoiceResponse()
-    if request.method =='GET':
+    if (request.method =='GET' || request.method == 'POST'):
         gather = Gather()
         gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")    
+        print(request.data.decode('ascii'))
         resp.append(gather)
-    if request.method == 'POST':
-        print(request.data)
     #resp.append(gather)
     #digits = request.values['Digits']
     #if gather == 1:
