@@ -14,6 +14,10 @@ def hello():
         gather = Gather()
         gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")    
         print(request.data.decode('ascii'))
+        print(request.form)
+        print(request.args)
+        print(request.values)
+        print(request.get_json())
         resp.append(gather)
     #resp.append(gather)
     #digits = request.values['Digits']
