@@ -12,13 +12,15 @@ def hello():
     resp = VoiceResponse()
     if (request.method =='GET' or request.method == 'POST'):
         gather = Gather()
-        gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")    
         #print(request.data.decode('ascii'))
         #print("form")
-        digits = request.form['Digits']
-        gather.say(digits) 
+        if 'Digits' in request.form:
+            digits = request.form['Digits']
+            gather.say(digits) 
+        else:
+            gather.say("Hello, please enter a number to play fizzbuzz over the phone. Press # when you're done")    
+        
         resp.append(gather)
-    
     return str(resp)
 
 if __name__ == "__main__":
